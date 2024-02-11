@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestNGFrameworkSuite">
+	<listeners>
+		<listener class-name="com.seleniumpractice.base.TestListeners" />
+	</listeners>
+	<test name="Test">
+		<!-- parallel="methods" -->
+		<classes>
+			<!-- <class name="com.seleniumpractice.homepage.HomePageTest"/> -->
+			<class name="com.seleniumpractice.homepage.LoginTest">
+				<methods>
+					<include name="ThisIsDemoTest1" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- InputFormSuite -->
