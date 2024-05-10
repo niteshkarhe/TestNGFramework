@@ -4,7 +4,7 @@
 	"browserName": "chrome",
 	"browserVersion": "",
 	"webDriverMaxWait": 50,
-	"implicitWait": 30,
+	"implicitWait": 0,
 	"pageLoadWait": 30,
 	"headlessBrowser": false,
 	"fileDownloadPath": "",
