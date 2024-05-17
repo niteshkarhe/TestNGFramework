@@ -122,7 +122,7 @@ public class SeleniumActions
 				case "className": return By.className(locator);
 				case "tagname": return By.tagName(locator);
 				case "linkText": return By.linkText(locator);
-				case "partialLinkText": return By.linkText(locator);
+				case "partialLinkText": return By.partialLinkText(locator);
 				case "cssSelector": return By.cssSelector(locator);
 				case "xpath": return By.xpath(locator);
 				default: return null;

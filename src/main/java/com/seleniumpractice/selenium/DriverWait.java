@@ -17,7 +17,7 @@ public class DriverWait
 	public DriverWait(WebDriver driver)
 	{
 		this.driver = driver;
-		this.report = new SeleniumReport(this.driver);
+		this.report = SeleniumReport.ToSeleniumReport(this.driver);
 	}
 	
 	public WebElement getElementWhenPresentInDom(By locator, long... inpSeconds)

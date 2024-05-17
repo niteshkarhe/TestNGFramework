@@ -1,6 +1,5 @@
 package com.seleniumpractice.base;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -35,7 +34,7 @@ public class TestListeners implements ITestListener //extends SeleniumReport
 	@Override
 	public void onTestFailure(ITestResult result) {
 		SeleniumReport report = SeleniumReport.ToSeleniumReport(SeleniumTest.getDriver().get());
-		report.LogResult(true, "This is start of the test");
+		report.LogResult(true, "Test case failed: <b>" + result.getName() + "</b>");
 	}
 
 	@Override
@@ -46,6 +45,8 @@ public class TestListeners implements ITestListener //extends SeleniumReport
 	@Override
 	public void onTestStart(ITestResult result) 
 	{
+		SeleniumReport report = SeleniumReport.ToSeleniumReport(SeleniumTest.getDriver().get());
+		report.LogResult(false, "Test case name: <b>" + result.getTestName()+ "</b>");
 	}
 
 	@Override

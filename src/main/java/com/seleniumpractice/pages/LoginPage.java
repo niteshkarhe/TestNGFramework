@@ -20,7 +20,7 @@ public class LoginPage extends SeleniumActions
 		super(driver);
 		locators.put("usernameTextBoxName", "username");
 		locators.put("passwordTextBoxName", "password");
-		locators.put("loginBtnXpath", "//button");
+		locators.put("loginBtnXpath", "//butto");
 	}
 	
 	public void LoginToTheApplication()
@@ -31,7 +31,7 @@ public class LoginPage extends SeleniumActions
 			Thread.sleep(3000);
 			enterText(locators.get("usernameTextBoxName"), "name", "Admin", 5);
 			enterText(locators.get("passwordTextBoxName"), "name", "admin123", 5);
-			click(locators.get("loginBtnXpath"), "xpath", 5);
+			click(locators.get("loginBtnXpath"), "xpath", 10);
 			Thread.sleep(3000);
 		}
 		catch (InterruptedException e) 

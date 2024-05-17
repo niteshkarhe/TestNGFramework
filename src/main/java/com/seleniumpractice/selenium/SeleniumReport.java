@@ -1,13 +1,8 @@
 package com.seleniumpractice.selenium;
 
-import java.lang.reflect.Method;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 
 import com.aventstack.extentreports.Status;
 import com.seleniumpractice.base.BaseReport;
