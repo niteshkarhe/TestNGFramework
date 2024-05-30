@@ -29,7 +29,7 @@ public class SeleniumTest extends BaseTest {
 	static public ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
 	private DriverManager factory = null;
 	
-	@BeforeClass
+	@BeforeClass(alwaysRun = true)
 	public void startClass()
 	{
 		if (seleniumConfig.getBrowserScope().equals("class")) 
@@ -37,30 +37,38 @@ public class SeleniumTest extends BaseTest {
 			startWebDriver();
 		}
 	}
-
-	@BeforeMethod
+	
+	@BeforeMethod(alwaysRun = true)
 	public void startTest()
 	{
+		System.out.println("#### Before Method to start driver");
 		if (seleniumConfig.getBrowserScope().equals("method")) 
 		{
 			startWebDriver();
 		}
 	}
+	
+	/*
+	 * @BeforeMethod(groups= {"NoUse"}) public void startTesdt() {
+	 * System.out.println("#### Before Method of no use"); }
+	 */
 	  
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void stopTest()
 	{
 		if (seleniumConfig.getBrowserScope().equals("method"))
 		{
+			System.out.println("#### After method to close browser");
 			stopWebDriver();
 		} 
 	}
 	
-	@AfterClass
+	@AfterClass(alwaysRun = true)
 	public void stopClass()
 	{
 		if (seleniumConfig.getBrowserScope().equals("class"))
 		{
+			System.out.println("#### After method to close browser after all class tests are run");
 			stopWebDriver();
 		}
 	}
@@ -87,7 +95,7 @@ public class SeleniumTest extends BaseTest {
 	{
 		try
 		{
-			factory.closeDriver();
+			driver.get().quit();
 		}
 		catch (Exception e)
 		{

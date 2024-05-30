@@ -45,6 +45,7 @@ public class TestListeners implements ITestListener //extends SeleniumReport
 	@Override
 	public void onTestStart(ITestResult result) 
 	{
+		String t = result.getTestName();
 		SeleniumReport report = SeleniumReport.ToSeleniumReport(SeleniumTest.getDriver().get());
 		report.LogResult(false, "Test case name: <b>" + result.getTestName()+ "</b>");
 	}

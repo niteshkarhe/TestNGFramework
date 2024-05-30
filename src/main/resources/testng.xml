@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="TestNGFrameworkSuite">
+<suite name="TestNGFrameworkSuite" allow-return-values="true">
+	<parameter name="constructor" value="Nitesh" />
 	<listeners>
 		<listener class-name="com.seleniumpractice.base.TestListeners" />
+		<listener class-name="com.seleniumpractice.base.TestTransformer" />
+		<!-- <listener class-name="com.seleniumpractice.base.TestMethodInceptor" />-->
 	</listeners>
-	<test name="Test">
+	<test name="Test" parallel="methods">
+		<groups>
+			<define name="group1">
+				<include name="Login" />
+			</define>
+			<run>
+				<include name="group1" />
+			</run>
+		</groups>
 		<!-- parallel="methods" -->
 		<classes>
-			<!-- <class name="com.seleniumpractice.homepage.HomePageTest"/> -->
-			<class name="com.seleniumpractice.homepage.LoginTest">
-				<methods>
-					<include name="ThisIsDemoTest1" />
-				</methods>
-			</class>
+			<class name="com.seleniumpractice.homepage.HomePageTest"/>
+			<class name="com.seleniumpractice.homepage.LoginTest" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- InputFormSuite -->

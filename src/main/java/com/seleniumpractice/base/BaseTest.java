@@ -4,8 +4,6 @@
 
 package com.seleniumpractice.base;
 
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -52,9 +50,10 @@ public class BaseTest
 	@Setter
 	public static List<String> TestNames = new ArrayList<String>();
 	
-	@BeforeMethod
+	@BeforeMethod(alwaysRun = true)
 	public void TestMethodSetup(Method method)
 	{
+		System.out.println("#### Before Method to setup ExtentReport");
 		hasFailures.set(false);
 		try
 		{
@@ -69,11 +68,12 @@ public class BaseTest
 		}
 	}
 	
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	public void TestMethodTearDown(ITestResult result)
 	{
 		try
 		{
+			System.out.println("#### After Method to end test with result");
 			getTestNames().remove(result.getTestName());
 			int testStatus = result.getStatus();
 			String stackTrace = result.getThrowable() == null
@@ -94,9 +94,10 @@ public class BaseTest
 		}
 	}
 	
-	@AfterSuite
+	@AfterSuite(alwaysRun = true)
 	public void EndSuite()
 	{
+		System.out.println("#### After Suite to flush ExtentReport");
 		getSuiteReport().flush();
 	}
 }

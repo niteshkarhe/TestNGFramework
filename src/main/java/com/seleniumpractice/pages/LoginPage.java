@@ -20,9 +20,9 @@ public class LoginPage extends SeleniumActions
 		super(driver);
 		locators.put("usernameTextBoxName", "username");
 		locators.put("passwordTextBoxName", "password");
-		locators.put("loginBtnXpath", "//butto");
+		locators.put("loginBtnXpath", "//button");
 	}
-	
+
 	public void LoginToTheApplication()
 	{
 		try
