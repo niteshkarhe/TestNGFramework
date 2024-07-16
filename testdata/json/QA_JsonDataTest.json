@@ -1,0 +1,36 @@
+{
+	"Verify that the user details are displayed": [
+		{
+			"Firstname": "Nitish",
+			"Lastname": "Karhe",
+			"Age": 32,
+			"Country": "India"
+		},
+		{
+			"Firstname": "Aman",
+			"Lastname": "Shingare",
+			"Age": 28,
+			"Country": "India"
+		},
+		{
+			"Firstname": "Sahil",
+			"Lastname": "Bansal",
+			"Age": 32,
+			"Country": "India"
+		}
+	],
+	"Verify that the invalid user details are displayed": [
+		{
+			"Firstname": "Mukesh",
+			"Lastname": "Raghuwanshi",
+			"Age": 36,
+			"Country": "India"
+		},
+		{
+			"Firstname": "Mahadev",
+			"Lastname": "Bajare",
+			"Age": 25,
+			"Country": "India"
+		}
+	]
+}
