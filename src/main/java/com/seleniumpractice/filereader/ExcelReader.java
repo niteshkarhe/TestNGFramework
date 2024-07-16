@@ -14,16 +14,18 @@ import org.apache.poi.ss.util.NumberToTextConverter;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import com.seleniumpractice.selenium.SeleniumTest;
+
 public class ExcelReader
 {
 	String filePath = "";
 	String workSheetName = "";
 	String testName = "";
 	
-	public ExcelReader(String excelPath, String excelSheetName, String testname)
+	public ExcelReader(String excelFileName, String excelSheetName, String testname)
 	{
-		this.filePath = excelPath;
-		this.workSheetName = excelSheetName;
+		this.filePath = System.getProperty("user.dir") + "\\testdata\\excel\\" + excelFileName + ".xlsx";;
+		this.workSheetName = SeleniumTest.seleniumConfig.getEnvironment() + "_" + excelSheetName;
 		this.testName = testname;
 	}
 	
