@@ -19,6 +19,7 @@ public class SeleniumConfig
 	private String browserName;
 	private String browserVersion;
 	private String browserScope;
+	private String environment;
 	private long webDriverMaxWait;
 	private int implicitWait;
 	private int pageLoadWait;
